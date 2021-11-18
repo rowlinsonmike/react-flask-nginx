@@ -10,6 +10,7 @@ source env/bin/activate
 
 Install dependencies
 ```bash
+npm i
 npm run setup
 ```
 
