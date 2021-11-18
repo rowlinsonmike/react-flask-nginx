@@ -21,6 +21,8 @@ Run locally
 npm run dev
 ```
 
+Navigate to `http://localhost:81/`
+
 ## Production
 
 Run in production
@@ -28,3 +30,5 @@ Run in production
 npm run build
 npm run prod
 ```
+
+Navigate to `http://localhost:81/`
