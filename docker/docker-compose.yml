@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+    nginx:
+        build: ../nginx/prod
+        depends_on:
+            - flask
+        volumes:
+            - ../nginx/prod/nginx.conf:/etc/nginx/nginx.conf
+        ports:
+            - 81:81
+    flask:
+        build:
+            context: ../server
+        ports:
+            - 5000:5000
+        volumes:
+            - ../server:/usr/src/app
+        command: >
+            gunicorn -w 4 -b 0.0.0.0:5000 "app:create_app('production')"
+    # react:
+    #     build:
+    #         context: ./client
+    #     ports:
+    #         - 3000:3000
+    #     volumes:
+    #         - ./client/src:/usr/src/app/src
+
